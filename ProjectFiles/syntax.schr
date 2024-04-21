@@ -17,12 +17,12 @@ qubit(s)
     Methods
 - .getState()
     Example:
-        |0> q 
+        |0>q 
         q.getState()
         |0>
 - .setState()
     Example:
-        |0> q
+        |0>q
         q.setState(|1>)
         q.getState()
 
