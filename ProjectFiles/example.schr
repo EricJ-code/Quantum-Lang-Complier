@@ -13,20 +13,45 @@ observe u
 observe b
 
 
+
 ; Gate class
 
 #g
 
 g.h q
+observe q
 g.x q
+observe q
 g.y q 
+observe q
 g.z q
+observe q
 
 g.h u
+observe u
 g.x u 
+observe u
 g.y u 
+observe u
 g.z u 
+observe u
 
 g.CNOT b 
 
 g.CNOT i 
+
+
+; Strech Goals
+
+;Saving a state indiv
+
+q save g
+
+;Saving toggle
+g saving
+g !saving
+
+;Super Pos toggle
+
+g super
+g !super

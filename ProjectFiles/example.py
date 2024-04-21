@@ -1,12 +1,19 @@
 import depency_classes as sdc
 
-qubit_name = sdc.qubit([1])
-print(qubit_name)
+q = sdc.qubit([1])
+print(q)
 
-qubit_name = sdc.qubit([1, 0])
-print(qubit_name)
+u = sdc.qubit([1, 0])
+print(u)
 
-gate_name = sdc.gate()
-gate_name.h(qubit_name)
-gate_name.y(qubit_name)
-print(gate_name)
+
+g = sdc.gate()
+g.default_gates('h', q)
+print(g)
+g.default_gates('x', q)
+print(g)
+g.default_gates('y', q)
+print(g)
+g.default_gates('z', q)
+print(g)
+
