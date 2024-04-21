@@ -1,0 +1,25 @@
+#This is a comment
+Default Methods
+    def dp(x, y):
+    def sqrt(x)
+--KEYWORDS--
+
+qubit
+
+    Example: qubit x = (top , botom)
+
+    if bottom = 0 then state = 0
+    
+    Methods
+- .getState()
+- .setState()
+
+
+gate
+    Methods
+- .h() --> Takes a qubit
+- .x() --> Takes a qubit
+- .y() --> Takes a qubit
+- .z() --> Takes a qubit
+
+Gate x = new gate
