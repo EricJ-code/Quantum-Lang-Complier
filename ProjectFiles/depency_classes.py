@@ -18,6 +18,9 @@ class qubit():
 
 class gate():
     def __init__(self):
+        self.keep_results = False;
+        self.super_pos = False;
+
         self.results = np.array([])
         self.h_math = (1 / np.sqrt(2)) * np.array([[1, 1], [1, -1]]);
         self.x_math = np.array([[0, 1], [1, 0]])
@@ -31,7 +34,7 @@ class gate():
             s += formatted_result
         return s.strip()
     
-    def default_gates(self, gate, qubit, super_pos=False, keep_results = False):
+    def default_gates(self, gate, qubit):
         dot_math = 0
         self.results = []
         match gate:
@@ -44,13 +47,13 @@ class gate():
             case 'z':
                 dot_math = self.z_math
 
-        if super_pos == False:
+        if self.super_pos == False:
             for state in qubit.states:
                 self.results.append(np.dot(state, dot_math))
-        elif super_pos == True:
+        elif self.super_pos == True:
             for state in qubit.states:
                 self.results.append(np.dot(state, dot_math)**2)
-        if keep_results == True:
+        if self.keep_results == True:
             qubit.states = self.results
         
     
