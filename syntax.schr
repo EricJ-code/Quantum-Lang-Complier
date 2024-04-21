@@ -1,25 +1,41 @@
-#This is a comment
-Default Methods
-    def dp(x, y):
-    def sqrt(x)
+; This is a comment
+; Delimiter " "
+
 --KEYWORDS--
 
-qubit
+qubit(s)
 
-    Example: qubit x = (top , botom)
+    Define Example: |state>name
 
-    if bottom = 0 then state = 0
-    
+        Logic of definition:
+        For each number including i in between "|" & ">"
+            IF it is 0 THEN intiaize [[1, 0]] to the var's 2d array
+            IF it is 1 THEN intiaize [[0, 1]] to the var's 2d array
+            IF it is i THEN intiaize [[i]] to the var's 2d array
+            IF it is EMPTY THEN intiaize [[]] to the var's 2d array
+
     Methods
 - .getState()
+    Example:
+        |0> q 
+        q.getState()
+        |0>
 - .setState()
+    Example:
+        |0> q
+        q.setState(|1>)
+        q.getState()
 
 
 gate
-    Methods
-- .h() --> Takes a qubit
-- .x() --> Takes a qubit
-- .y() --> Takes a qubit
-- .z() --> Takes a qubit
+    Define Example: 
+    #name
 
-Gate x = new gate
+    Methods
+- .h(qubit) --> Takes a qubit with only one state
+- .x(qubit) --> Takes a qubit with only one state
+- .y(qubit) --> Takes a qubit with only one state
+- .z(qubit) --> Takes a qubit with only one state
+- .CNOT(qubit) --> Takes a qubit with only two states
+- .newGate(; Add your own mathmatical expression to dot to the qubit)
+

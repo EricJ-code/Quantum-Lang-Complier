@@ -1,0 +1,27 @@
+; This is to use as an example for demo purposes
+; i is counted as number for imaginary numbers
+
+; Qubit(s) class
+
+|0> q   ;(1, 0)
+|1> u   ;(0, 1)
+|00> b  ;(1, 0), (1, 0)
+|0i> i  ;(1, 0), (i)
+
+; Gate class
+
+#g
+
+g.h(q)
+g.x(q)
+g.y(q)
+g.z(q)
+
+g.h(u)
+g.x(u)
+g.y(u)
+g.z(u)
+
+g.CNOT(b)
+
+g.CNOT(i)
