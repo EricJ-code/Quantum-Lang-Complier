@@ -17,14 +17,10 @@ It creates Schrodinger's lanugage takes in a file, following the language specif
 - [Screenshot](#screenshot)
 - [Demo](#demo)
   - [How it Works](#how-it-works)
-
-    The language works by using a Powershell script. From here, a Racket script is called that converts our language into Python. The Python code is then excuted in the terminal, and displayed to the user.
   - [Preview of Language File](#preview-of-language-file)
   - [Results](#results)
 - [Install-and-Run](#install-and-run)
   - [Downloads](#downloads)
- 
-    Download this folder which contains each of the necessary scripts to run our language.
   - [Configure Venv](#configure-venv)
   - [Run Application](#run-application)
  
@@ -33,9 +29,11 @@ It creates Schrodinger's lanugage takes in a file, following the language specif
 ## Demo
 
 #### How it Works
+The language works by using a Powershell script. From here, a Racket script is called that converts our language into Python. The Python code is then excuted in the terminal, and displayed to the user.
 
 #### Preview of Data
 
 #### Results
 
 ## Install and Run
+Download this folder which contains each of the necessary scripts to run our language.
