@@ -3,25 +3,30 @@
 
 ; Qubit(s) class
 
-|0>q   ;(1, 0)
+|0> q   ;(1, 0)
+observe q
+
 |1>u   ;(0, 1)
+observe u
+
 |00>b  ;(1, 0), (1, 0)
-|0i>i  ;(1, 0), (i)
+observe b
+
 
 ; Gate class
 
 #g
 
-g.h(q)
-g.x(q)
-g.y(q)
-g.z(q)
+g.h q
+g.x q
+g.y q 
+g.z q
 
-g.h(u)
-g.x(u)
-g.y(u)
-g.z(u)
+g.h u
+g.x u 
+g.y u 
+g.z u 
 
-g.CNOT(b)
+g.CNOT b 
 
-g.CNOT(i)
+g.CNOT i 
