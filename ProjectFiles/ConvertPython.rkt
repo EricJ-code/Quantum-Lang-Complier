@@ -13,6 +13,6 @@
     (lambda ()
       (display python_code))))
 
-(define lines (read-file ""))
+(define lines (read-file "example.schr"))
 
 (write-to-py-file "" (string-join lines "\n"))
