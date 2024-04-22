@@ -15,7 +15,7 @@ observe b
 
 
 ; Gate class
-
+g = gate()
 #g
 
 g.h q
