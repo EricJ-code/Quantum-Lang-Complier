@@ -28,13 +28,13 @@ It creates Schrodinger's lanugage takes in a file, following the language specif
 
 ## Demo
 
-#### How it Works
+### How it Works
 The language works by using a Powershell script. From here, a Racket script is called that converts our language into Python. The Python code is then excuted in the terminal, and displayed to the user.
 
 
-#### Preview of Data
+### Preview of Data
 
-#### Results
+### Results
 
 ## Install and Run
 Download this folder which contains each of the necessary scripts to run our language.
