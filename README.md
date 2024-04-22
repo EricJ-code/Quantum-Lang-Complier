@@ -40,5 +40,4 @@ The language works by using a Powershell script. From here, a Racket script is c
 Download this folder which contains each of the necessary scripts to run our language.
 You need to run the following commands in Windows Powershell. You need to locate the environment for Racket, the Powershell script, the Racket script, and the Python output file. Using all of these, input them into Powershell. <br> <br>
 Here is an example input on how to run it in the script: <br>
-.\SchrodingerScript2.ps1 -RacketExecutablePath "C:\Program Files\Racket\Racket.exe" -RacketScriptPath "C:\Program Files\Coding Applications\Racket Scripts\ConvertPython2.rkt" -InputFilePath "C:\Users\tyler\OneDrive\Documents\ExamplePython.txt" -OutputFilePath "C:\Users\tyler\OneDrive\Documents\output.py"
-
+.\SchrodingerScript.ps1 -RacketExecutablePath "C:\Program Files\Racket\Racket.exe" -RacketScriptPath "C:\Program Files\Coding Applications\Racket Scripts\SchrodingerLanguageMain.rkt" -InputFilePath "C:\Users\tyler\OneDrive\Documents\ExampleSchrodingerLanguage.txt" -OutputFilePath "C:\Users\tyler\OneDrive\Documents\output.py"
