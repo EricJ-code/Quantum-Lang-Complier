@@ -2,14 +2,25 @@
 import depency_classes as sdc
 
 # Qubit(s) Class
-q = sdc.qubit([1])
+
+q = sdc.qubit([0])
 print(q)
 
-u = sdc.qubit([1, 0])
+u = sdc.qubit([1])
 print(u)
 
+b = sdc.qubit([1, 1])
+print(b)
+
+# i = sdc.qubit([1,0,0,0])
+# print(i)
+
+
+
 #Gate Class
+
 g = sdc.gate()
+
 g.default_gates('h', q)
 print(g)
 g.default_gates('x', q)
@@ -18,6 +29,21 @@ g.default_gates('y', q)
 print(g)
 g.default_gates('z', q)
 print(g)
+
+g.default_gates('h', u)
+print(g)
+g.default_gates('x', u)
+print(g)
+g.default_gates('y', u)
+print(g)
+g.default_gates('z', u)
+print(g)
+
+g.default_gates('CNOT', b)
+print(g)
+# g.default_gates('CNOT', i)
+# print(g)
+
 
 #Strech Goals
 # Saving a state indiv
