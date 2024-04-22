@@ -11,6 +11,8 @@
      (define gate (second (regexp-match #rx"([a-zA-Z0-9_]+).(h|x|y|z)" (first (string-split line " ")))))
      (define operation (third (regexp-match #rx"([a-zA-Z0-9_]+).(h|x|y|z)" (first (string-split line " ")))))
      (format "~a.default_gates('~a', ~a)\n" gate operation var-name)]
+    [(list "observe" var-name)
+     (format "print ~a\n" var-name)]
     [else
      ""])) ; Return an empty string if no pattern matches
 
@@ -21,4 +23,4 @@
 (parse-line "this.x qubit2")
 (parse-line "shit.y qubit3")
 (parse-line "g.z qubit4")
-(parse-line "observe")
+(parse-line "observe q")
