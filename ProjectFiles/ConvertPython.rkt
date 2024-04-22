@@ -1,16 +1,23 @@
 #lang racket
 
-; Parses a single line to generate Python code.
 (define (parse-line line)
-  (let* ((parts (string-split line " "))  ; Use " " as the delimiter
-         (prefix (string-trim (first parts) "|")))
-    (define qubit-content (regexp-replace* #rx"[^0-9-]" prefix "")) ; Extract only digits and "-"
-    (string-append
-     (if (string=? qubit-content "")
-         ""
-         (string-append "q = qubit([" qubit-content "])\nprint(q)\n")))))
+  (define cleaned-line (regexp-replace #rx"\r" line ""))
+  (match (string-split cleaned-line " ")
+    [(list "|0>" var-name)
+     (format "~a = qubit([0]) \n" var-name)]
+    [(list "|1>" var-name)
+     (format "~a = qubit([1]) \n" var-name)]
+    [(list var-name "=" "gate()")
+     (format "~a = gate() \n" var-name)]
+    [(list (regexp #rx"([a-zA-Z0-9_]+).(h|x|y|z)") var-name)
+     (define gate (second (regexp-match #rx"([a-zA-Z0-9_]+).(h|x|y|z)" (first (string-split cleaned-line " ")))))
+     (define operation (third (regexp-match #rx"([a-zA-Z0-9_]+).(h|x|y|z)" (first (string-split cleaned-line " ")))))
+     (format "~a.default_gates('~a', ~a) \n" gate operation var-name)]
+    [(list "observe" var-name)
+     (format "print(~a) \n" var-name)]
+    [else
+     ""])) ; Return an empty string if no pattern matches
 
-; Reads a file and parses each line to generate Python code.
 (define (read-file filename)
   (with-input-from-file filename
     (lambda ()
@@ -18,23 +25,22 @@
         (let ((line (read-line)))
           (if (eof-object? line)
               (string-join (reverse lines) "")
-              (loop (cons (parse-line line) lines))))))))
+              (let ((parsed-line (parse-line line)))
+                (loop (cons parsed-line lines)))))))))
 
-; Appends the generated Python code to an existing Python file.
 (define (append-to-py-file filename python_code)
-  (call-with-output-file filename
+  (with-output-to-file filename
     #:exists 'append
-    (lambda (output-port)
-      (display python_code output-port))))
+    #:mode 'text
+    (lambda ()
+      (for-each (lambda (line)
+                  (display line)
+                  (newline))
+                (string-split python_code "\n")))))
 
-; Function that runs the script.
 (define (main input-file output-file)
   (let ((python-code (read-file input-file)))
     (append-to-py-file output-file python-code)))
 
-; Parse command-line arguments.
-(define input-file (vector-ref (current-command-line-arguments) 0))
-(define output-file (vector-ref (current-command-line-arguments) 1))
-
-; Execute the main function with input and output file paths.
-(main input-file output-file)
+(main (vector-ref (current-command-line-arguments) 0)
+      (vector-ref (current-command-line-arguments) 1))
