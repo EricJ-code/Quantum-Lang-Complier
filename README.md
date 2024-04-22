@@ -19,7 +19,7 @@ It creates Schrodinger's lanugage takes in a file, following the language specif
   - [How it Works](#how-it-works)
   - [Preview of Language File](#preview-of-language-file)
   - [Results](#results)
-- [Install-and-Run](#install-and-run)
+- [Install and Run](#install-and-run)
   - [Downloads](#downloads)
   - [Configure Venv](#configure-venv)
   - [Run Application](#run-application)
@@ -31,9 +31,14 @@ It creates Schrodinger's lanugage takes in a file, following the language specif
 #### How it Works
 The language works by using a Powershell script. From here, a Racket script is called that converts our language into Python. The Python code is then excuted in the terminal, and displayed to the user.
 
+
 #### Preview of Data
 
 #### Results
 
 ## Install and Run
 Download this folder which contains each of the necessary scripts to run our language.
+You need to run the following commands in Windows Powershell. You need to locate the environment for Racket, the Powershell script, the Racket script, and the Python output file. Using all of these, input them into Powershell. <br> <br>
+Here is an example input on how to run it in the script: <br>
+.\SchrodingerScript2.ps1 -RacketExecutablePath "C:\Program Files\Racket\Racket.exe" -RacketScriptPath "C:\Program Files\Coding Applications\Racket Scripts\ConvertPython2.rkt" -InputFilePath "C:\Users\tyler\OneDrive\Documents\ExamplePython.txt" -OutputFilePath "C:\Users\tyler\OneDrive\Documents\output.py"
+
