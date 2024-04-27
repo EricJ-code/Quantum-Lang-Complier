@@ -4,7 +4,7 @@ A language to learn quantum computing.
 <br>
 <p align="center">
   <a alt="Contributors"> <img src="https://img.shields.io/badge/Contributors-4-blue" /></a>
-  <img src="https://img.shields.io/badge/Development_Stage-Beta-orange"
+  <img src="https://img.shields.io/badge/Development_Stage-Released-orange"
   <a href="https://github.com/BabyKangaroo117/Frugl-APP/graphs/contributors" alt="License">
         <img src="https://img.shields.io/badge/License-MIT-green" /></a>
 </p>
